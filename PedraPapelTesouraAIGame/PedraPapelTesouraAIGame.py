@@ -195,7 +195,9 @@ def play_game():
         print("AI won the game")
     else:
         print("The game ended in a tie!")
-    save_game(game_history)
+    if len(game_history)>6:
+        save_game(game_history)
+        create_and_train_model()
 
 if __name__ == "__main__":
     play_game()
